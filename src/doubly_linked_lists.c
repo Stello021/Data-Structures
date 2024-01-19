@@ -1,19 +1,4 @@
-//----------DOUBLY LINKED LIST----------
-//This lists have nodes with two links(pointers) to other nodes,
-// the next node, like single linked list, and the previous node
-
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct  doubly_linked_list_int_node
-{
-    struct doubly_linked_list_int_node* next;
-    struct doubly_linked_list_int_node* previous;
-    int value;
-    unsigned int count; //it goes updated with number of elements into the list if this is the head node
-
-}IntDoublyNode;
+#include <doubly_linked_lists.h>
 
 IntDoublyNode* GetTail(IntDoublyNode* head)
 {

@@ -1,32 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-//----------DICTIONARY----------
-//A dictionary is a set, where there are unique keys associate to a value of any type
-
-typedef struct string_node
-{
-    struct string_node* next;
-    const char* key;
-    int value;
-    size_t key_len;
-
-}StringIntNode;
-typedef struct founded_node
-{
-    StringIntNode* node_found;
-    size_t index;
-}FoundedNode;
-
-typedef struct dictionary
-{
-    StringIntNode** hashmap_nodes; //Nuber of linked lists, one for every hash code returnable
-    size_t hashmap_size; //Hash code returnable (from 0 to hasmap_size), number of nodes, number of linked lists
-    unsigned int collision_count;
-    unsigned int pressure;
-}Dictionary;
+#include <dictionary.h>
 
 Dictionary* Create_new_dictionary(const size_t hashmap_size, const unsigned int max_collision) //Here hashmap size is const because don't change into this function 
                                                //but the hashmap size var of set could change 
@@ -47,6 +19,7 @@ Dictionary* Create_new_dictionary(const size_t hashmap_size, const unsigned int 
     }
     return set_table;
 }
+
 size_t djb33xHash (const char* key, const size_t key_length)
 {
     size_t hash = 5381; //Brutal value that guaranteed fewer collisions
@@ -85,8 +58,6 @@ FoundedNode Search(Dictionary* table, const char* key)
     printf("String not found\n");
     return founded_node;
 }
-
-StringIntNode* Insert(Dictionary** table, const char* key, const int value);
 
 void Rehash(Dictionary** table)
 {

@@ -1,33 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-//----------SETS----------
-//A set is a list of unique keys (strings)
-//They are based on Hashing algorithms that allows to manipulate data sequence
-// to return a single value, but not viceversa.
-//This algorithms are effected by the collision issue, 
-//it means that different values could return the same value
-
-typedef struct string_node
-{
-    struct string_node* next;
-    const char* key;
-    size_t key_len;
-
-}StringNode;
-typedef struct founded_node
-{
-    StringNode* node_found;
-    size_t index;
-}FoundedNode;
-
-typedef struct set
-{
-    StringNode** hashmap_nodes; //Nuber of linked lists, one for every hash code returnable
-    size_t hashmap_size; //Hash code returnable (from 0 to hasmap_size), number of nodes, number of linked lists
-}Set;
+#include <sets.h>
 
 Set* Create_new_set(const size_t hashmap_size) //Here hashmap size is const because don't change into this function 
                                                //but the hashmap size var of set could change 
@@ -187,6 +158,8 @@ int main(int argc, char **argv)
     printf("----------\n");
     FoundedNode found_node = Search(new_set, "GoodMorning");
     printf("Next: %s\n", found_node.node_found -> next -> key);
+    
+    free(new_set);
 
 
 

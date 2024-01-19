@@ -1,14 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct int_node
-{
-    struct int_node* next;
-    int value;
-    unsigned int count;
-
-}IntNode;
+#include <linked_lists.h>
 
 IntNode* GetTail(IntNode* head)
 {
