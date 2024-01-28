@@ -28,7 +28,7 @@ size_t djb33xHash (const char* key, const size_t key_length)
     return hash;
 }
 
-FoundedNode Search(Set* table, const char* key)
+FoundedNode Search(const Set* table, const char* key)
 {
     const size_t key_length = strlen(key);
     const size_t hash = djb33xHash(key, key_length);
@@ -56,7 +56,7 @@ FoundedNode Search(Set* table, const char* key)
     return founded_node;
 }
 
-StringNode* Insert(Set* table, const char* key)
+StringNode* Insert(const Set* table, const char* key)
 {
     FoundedNode NodeFound = Search(table, key);
     if(NodeFound.node_found)
@@ -107,7 +107,7 @@ StringNode* Insert(Set* table, const char* key)
     return new_item;    
 }
 
-void Remove(Set* table, const char* key)
+void Remove(const Set* table, const char* key)
 {
     FoundedNode NodeFound = Search(table, key);
     if(!NodeFound.node_found)

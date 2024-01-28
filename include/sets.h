@@ -34,8 +34,8 @@ typedef struct set
 
 Set* Create_new_set(const size_t hashmap_size);
 size_t djb33xHash (const char* key, const size_t key_length);
-FoundedNode Search(Set* table, const char* key);
-StringNode* Insert(Set* table, const char* key);
-void Remove(Set* table, const char* key);
+FoundedNode Search(const Set* table, const char* key);
+StringNode* Insert(const Set* table, const char* key);
+void Remove(const Set* table, const char* key);
 
 #endif

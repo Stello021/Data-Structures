@@ -16,7 +16,7 @@ IntDoublyNode* GetTail(IntDoublyNode* head)
     return last_node;
 }
 
-void Append(IntDoublyNode **head, int valueToAppend)
+void Append(IntDoublyNode **head, const int valueToAppend)
 {
     IntDoublyNode* new_node = malloc(sizeof(IntDoublyNode*));
     if(!new_node)
@@ -40,7 +40,7 @@ void Append(IntDoublyNode **head, int valueToAppend)
         (*head) -> count++;
     }
 }
-void InsertAfter(IntDoublyNode **head, int valueWhereInsert, int valueToInsert) 
+void InsertAfter(IntDoublyNode **head, const int valueWhereInsert, const int valueToInsert) 
 {
     if(!*head)
     {
@@ -84,7 +84,7 @@ void InsertAfter(IntDoublyNode **head, int valueWhereInsert, int valueToInsert)
 
 }
 
-void InsertBefore(IntDoublyNode **head, int valueWhereInsert, int valueToInsert) 
+void InsertBefore(IntDoublyNode **head, const int valueWhereInsert, const int valueToInsert) 
 {
     if(!*head)
     {
@@ -132,7 +132,7 @@ void InsertBefore(IntDoublyNode **head, int valueWhereInsert, int valueToInsert)
 
 }
 
-unsigned int Length(IntDoublyNode* head)
+unsigned int Length(const IntDoublyNode* head)
 {
     return head -> count;
 }
@@ -159,7 +159,7 @@ IntDoublyNode* PopList(IntDoublyNode** head)
 
 }
 
-void RemoveAt(IntDoublyNode** head, unsigned int index)
+void RemoveAt(IntDoublyNode** head, const unsigned int index)
 {
     if(!*head)
     {
@@ -189,7 +189,7 @@ void RemoveAt(IntDoublyNode** head, unsigned int index)
     free(nodeToRemove);   
 }
 
-void Remove(IntDoublyNode** head, int valueToRemove)
+void Remove(IntDoublyNode** head, const int valueToRemove)
 {
     if(!*head)
     {

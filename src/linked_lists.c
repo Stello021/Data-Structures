@@ -18,7 +18,7 @@ IntNode* GetTail(IntNode* head)
 
 }
 
-void Append(IntNode **head, int valueToAppend)
+void Append(IntNode **head, const int valueToAppend)
 {
     IntNode* new_node = malloc(sizeof(IntNode*));
     if(!new_node)
@@ -62,7 +62,7 @@ IntNode* PopList(IntNode** head)
 
 }
 
-void RemoveAt(IntNode** head, unsigned int index)
+void RemoveAt(IntNode** head, const unsigned int index)
 {
     if(!*head)
     {
@@ -94,7 +94,7 @@ void RemoveAt(IntNode** head, unsigned int index)
     free(nodeToRemove);   
 }
 
-void Remove(IntNode** head, int valueToRemove)
+void Remove(IntNode** head, const int valueToRemove)
 {
     if(!*head)
     {

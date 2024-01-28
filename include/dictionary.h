@@ -34,7 +34,7 @@ typedef struct dictionary
 
 Dictionary* Create_new_dictionary(const size_t hashmap_size, const unsigned int max_collision);
 size_t djb33xHash (const char* key, const size_t key_length);
-FoundedNode Search(Dictionary* table, const char* key);
+FoundedNode Search( const Dictionary* table, const char* key);
 StringIntNode* Insert(Dictionary** table, const char* key, const int value);
 void Rehash(Dictionary** table);
 void Remove(Dictionary* table, const char* key);

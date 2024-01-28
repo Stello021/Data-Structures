@@ -31,7 +31,7 @@ size_t djb33xHash (const char* key, const size_t key_length)
     return hash;
 }
 
-FoundedNode Search(Dictionary* table, const char* key)
+FoundedNode Search(const Dictionary* table, const char* key)
 {
     const size_t key_length = strlen(key);
     const size_t hash = djb33xHash(key, key_length);

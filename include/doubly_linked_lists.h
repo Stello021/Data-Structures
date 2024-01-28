@@ -18,13 +18,13 @@ typedef struct  doubly_linked_list_int_node
 }IntDoublyNode;
 
 IntDoublyNode* GetTail(IntDoublyNode* head);
-void Append(IntDoublyNode **head, int valueToAppend);
-void InsertAfter(IntDoublyNode **head, int valueWhereInsert, int valueToInsert);
-void InsertBefore(IntDoublyNode **head, int valueWhereInsert, int valueToInsert);
-unsigned int Length(IntDoublyNode* head);
+void Append(IntDoublyNode **head, const int valueToAppend);
+void InsertAfter(IntDoublyNode **head, const int valueWhereInsert, const int valueToInsert);
+void InsertBefore(IntDoublyNode **head, const int valueWhereInsert, const int valueToInsert);
+unsigned int Length(const IntDoublyNode* head);
 IntDoublyNode* PopList(IntDoublyNode** head);
-void RemoveAt(IntDoublyNode** head, unsigned int index);
-void Remove(IntDoublyNode** head, int valueToRemove);
+void RemoveAt(IntDoublyNode** head, const unsigned int index);
+void Remove(IntDoublyNode** head, const int valueToRemove);
 IntDoublyNode* SplitList(IntDoublyNode* head);
 void MixLists(IntDoublyNode* first_head, IntDoublyNode* second_head);
 void Shuffle(IntDoublyNode** head);
